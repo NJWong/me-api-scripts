@@ -1,0 +1,20 @@
+{
+  "name": "me-api-scripts",
+  "version": "1.0.0",
+  "description": "Scripts for ME-API",
+  "type": "module",
+  "scripts": {
+    "dev:db:reset": "cross-env DB_BRANCH=dev node src/scripts/db-reset.js",
+    "dev:db:setup": "npm run dev:db:reset && cross-env DB_BRANCH=dev node src/scripts/db-setup.js",
+    "main:db:reset": "cross-env DB_BRANCH=main node src/scripts/db-reset.js",
+    "main:db:setup": "npm run main:db:reset && cross-env DB_BRANCH=main node src/scripts/db-setup.js"
+  },
+  "author": "NJWong",
+  "license": "ISC",
+  "dependencies": {
+    "@planetscale/database": "^1.10.0",
+    "cross-env": "^7.0.3",
+    "csv-parser": "^3.0.0",
+    "dotenv": "^16.3.1"
+  }
+}
