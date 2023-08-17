@@ -1,30 +1,31 @@
 id,name,species,gender,class
-1,Commander Shepard,1,1,N7 Alliance Marine / Spectre
-2,Liara T'Soni,2,3,Asari Scientist
-3,Garrus Vakarian,3,1,Turian Agent
-4,Tali'Zorah nar Rayya,5,2,Quarian Engineer
-5,Urdnot Wrex,4,1,Krogan Mercenary
-6,Kaidan Alenko,1,1,Alliance Sentinal
-7,Ashley Williams,1,2,Alliance Soldier
-8,David Anderson,1,1,Alliance Officer
-9,Saren Arterius,3,1,Rogue Spectre
-10,Kasumi Goto,1,2,Master Thief
-11,Grunt,4,1,Krogan Berserker
-12,Thane Krios,8,1,Drell Assassin
-13,Jack,1,2,Subject Zero
-14,Miranda Lawson,1,2,Cerberus Officer
-15,Legion,15,3,Geth Infiltrator
-16,Zaeed Massani,1,1,Mercenary
-17,Samara,2,3,Asari Justicar
-18,Morinth,2,3,Ardat-Yakshi
-19,Mordin Solus,6,1,Salarian Scientist
-20,Jacob Taylor,1,1,Cerberus Operative
-21,Javik,7,1,Vengeful Ancient
-22,James Vega,1,1,Arms Master
-23,Aria T'Loak,2,3,Pirate Queen of Omega
-24,Nyreen Kandros,3,2,Turian Huntress
-25,EDI,18,3,Cerberus Artificial Intelligence
-26,Richard L. Jenkins,1,1,Alliance Marine
-27,Karin Chakwas,1,2,Alliance Medical Doctor
-28,Matriarch Benezia,2,3,Asari Matriarch
-29,Sovereign,17,3,Reaper
+1,Commander Shepard,1,2,N7 Alliance Marine / Spectre
+2,Commander Shepard,1,1,N7 Alliance Marine / Spectre
+3,Liara T'Soni,2,3,Asari Scientist
+4,Garrus Vakarian,3,1,Turian Agent
+5,Tali'Zorah nar Rayya,5,2,Quarian Engineer
+6,Urdnot Wrex,4,1,Krogan Mercenary
+7,Kaidan Alenko,1,1,Alliance Sentinal
+8,Ashley Williams,1,2,Alliance Soldier
+9,David Anderson,1,1,Alliance Officer
+10,Saren Arterius,3,1,Rogue Spectre
+11,Kasumi Goto,1,2,Master Thief
+12,Grunt,4,1,Krogan Berserker
+13,Thane Krios,8,1,Drell Assassin
+14,Jack,1,2,Subject Zero
+15,Miranda Lawson,1,2,Cerberus Officer
+16,Legion,15,3,Geth Infiltrator
+17,Zaeed Massani,1,1,Mercenary
+18,Samara,2,3,Asari Justicar
+19,Morinth,2,3,Ardat-Yakshi
+20,Mordin Solus,6,1,Salarian Scientist
+21,Jacob Taylor,1,1,Cerberus Operative
+22,Javik,7,1,Vengeful Ancient
+23,James Vega,1,1,Arms Master
+24,Aria T'Loak,2,3,Pirate Queen of Omega
+25,Nyreen Kandros,3,2,Turian Huntress
+26,EDI,18,3,Cerberus Artificial Intelligence
+27,Richard L. Jenkins,1,1,Alliance Marine
+28,Karin Chakwas,1,2,Alliance Medical Doctor
+29,Matriarch Benezia,2,3,Asari Matriarch
+30,Sovereign,17,3,Reaper
