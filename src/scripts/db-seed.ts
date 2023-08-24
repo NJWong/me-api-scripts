@@ -77,30 +77,6 @@ async function seedCharacters(db: PlanetScaleDatabase<Record<string, never>>) {
   await db.insert(characters).values(validatedData)
 }
 
-async function seedShips(db: PlanetScaleDatabase<Record<string, never>>) {
-  console.log('Seeding ships table...')
-
-  // 1. Read CSV file
-  const shipsFile = Bun.file('src/data/ships.csv')
-  const csvString = await shipsFile.text()
-
-  // 2. Parse CSV file
-  const parsedCsv = Papa.parse(csvString, { header: true, dynamicTyping: true })
-
-  // 3. Validate CSV data
-  const insertShipsSchema = createInsertSchema(ships)
-  const validatedData: Array<z.TypeOf<typeof insertShipsSchema>> = []
-
-  for (const row of parsedCsv.data) {
-    const validatedRow = insertShipsSchema.parse(row)
-
-    validatedData.push(validatedRow)
-  }
-
-  // 4. Insert validated data into database
-  await db.insert(ships).values(validatedData)
-}
-
 async function seedShipClasses(db: PlanetScaleDatabase<Record<string, never>>) {
   console.log('Seeding shipClasses table...')
 
@@ -133,7 +109,13 @@ async function seedAffiliations(db: PlanetScaleDatabase<Record<string, never>>) 
   const csvString = await affiliationsFile.text()
 
   // 2. Parse CSV file
-  const parsedCsv = Papa.parse(csvString, { header: true, dynamicTyping: true })
+  const parsedCsv = Papa.parse(csvString, { header: true, dynamicTyping: true, transformHeader: (header) => {
+    if (header === 'primary_species') {
+      return 'primarySpecies'
+    }
+
+    return header
+  } })
 
   // 3. Validate CSV data
   const insertAffiliationsSchema = createInsertSchema(affiliations)
@@ -147,6 +129,30 @@ async function seedAffiliations(db: PlanetScaleDatabase<Record<string, never>>) 
 
   // 4. Insert validated data into database
   await db.insert(affiliations).values(validatedData)
+}
+
+async function seedShips(db: PlanetScaleDatabase<Record<string, never>>) {
+  console.log('Seeding ships table...')
+
+  // 1. Read CSV file
+  const shipsFile = Bun.file('src/data/ships.csv')
+  const csvString = await shipsFile.text()
+
+  // 2. Parse CSV file
+  const parsedCsv = Papa.parse(csvString, { header: true, dynamicTyping: true })
+
+  // 3. Validate CSV data
+  const insertShipsSchema = createInsertSchema(ships)
+  const validatedData: Array<z.TypeOf<typeof insertShipsSchema>> = []
+
+  for (const row of parsedCsv.data) {
+    const validatedRow = insertShipsSchema.parse(row)
+
+    validatedData.push(validatedRow)
+  }
+
+  // 4. Insert validated data into database
+  await db.insert(ships).values(validatedData)
 }
 
 async function main() {
