@@ -1,7 +1,7 @@
 id,name,class,affiliation,description
-1,SSV Normandy SR-1,2,Systems Alliance,"Normandy-class frigate, class leader. A prototype stealth frigate built by the Alliance in collaboration with the Turian Hierarchy. Destroyed near Alchera in 2183. Captained by Commander Shepard."
+1,SSV Normandy SR-1,2,1,"Normandy-class frigate, class leader. A prototype stealth frigate built by the Alliance in collaboration with the Turian Hierarchy. Destroyed near Alchera in 2183. Captained by Commander Shepard."
 2,SSV Normandy SR-2,2,1,"Originally a Cerberus frigate based on the SSV Normandy SR-1. Claimed, assigned the SSV prefix, and refitted by the Alliance in 2186. Captained by Commander Shepard."
-3,Sovereign,10,Reaper,"A Reaper discovered by Saren Arterius. Attempted to open the Citadel relay to the waiting Reaper fleet in dark space during the Battle of the Citadel, but was destroyed."
-4,Destiny Ascension,5,Asari Republics,"The most powerful warship built by the asari and flagship of the Citadel Fleet in 2183. Either destroyed or spared during the Battle of the Citadel. Captained by Matriarch Lidanya."
-5,Qwib-Qwib,1,Migrant Fleet,"A vessel of the Migrant Fleet. Crew of the Qwib-Qwib bear the unique but stigmatised name with grace and honor. Captained by Admiral Zaal'Koris vas Qwib-Qwib."
-6,Collector Cruiser,3,7,"The only known ship type belonging to the Collectors, who possess several of these vessels. This ""cruiser"" is actually almost double the size of a Kilimanjaro Dreadnought. Despite its size, it is capable of landing on the surface of a planet."
+3,Sovereign,10,18,"A Reaper discovered by Saren Arterius. Attempted to open the Citadel relay to the waiting Reaper fleet in dark space during the Battle of the Citadel, but was destroyed."
+4,Destiny Ascension,5,2,"The most powerful warship built by the asari and flagship of the Citadel Fleet in 2183. Either destroyed or spared during the Battle of the Citadel. Captained by Matriarch Lidanya."
+5,Qwib-Qwib,1,7,"A vessel of the Migrant Fleet. Crew of the Qwib-Qwib bear the unique but stigmatised name with grace and honor. Captained by Admiral Zaal'Koris vas Qwib-Qwib."
+6,Collector Cruiser,3,17,"The only known ship type belonging to the Collectors, who possess several of these vessels. This ""cruiser"" is actually almost double the size of a Kilimanjaro Dreadnought. Despite its size, it is capable of landing on the surface of a planet."

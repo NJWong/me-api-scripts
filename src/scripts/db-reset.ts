@@ -1,6 +1,6 @@
 import { connect } from '@planetscale/database'
 import { drizzle } from 'drizzle-orm/planetscale-serverless'
-import { genders, species, characters } from '../drizzle/schema'
+import { genders, species, characters, shipClasses, affiliations, ships } from '../drizzle/schema'
 
 console.log('--- db-reset starting ---')
 
@@ -20,5 +20,14 @@ await db.delete(species)
 
 console.log('Resetting characters table...')
 await db.delete(characters)
+
+console.log('Resetting shipClasses table...')
+await db.delete(shipClasses)
+
+console.log('Resetting affiliations table...')
+await db.delete(affiliations)
+
+console.log('Resetting ships table...')
+await db.delete(ships)
 
 console.log('--- db-reset completed ---\n')

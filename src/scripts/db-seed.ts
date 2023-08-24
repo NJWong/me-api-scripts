@@ -1,6 +1,6 @@
 import { connect } from '@planetscale/database'
 import { PlanetScaleDatabase, drizzle } from 'drizzle-orm/planetscale-serverless'
-import { genders, species, characters } from '../drizzle/schema'
+import { genders, species, characters, shipClasses, affiliations, ships } from '../drizzle/schema'
 import { createInsertSchema } from 'drizzle-zod'
 import { z } from 'zod'
 import Papa from 'papaparse'
@@ -77,6 +77,78 @@ async function seedCharacters(db: PlanetScaleDatabase<Record<string, never>>) {
   await db.insert(characters).values(validatedData)
 }
 
+async function seedShips(db: PlanetScaleDatabase<Record<string, never>>) {
+  console.log('Seeding ships table...')
+
+  // 1. Read CSV file
+  const shipsFile = Bun.file('src/data/ships.csv')
+  const csvString = await shipsFile.text()
+
+  // 2. Parse CSV file
+  const parsedCsv = Papa.parse(csvString, { header: true, dynamicTyping: true })
+
+  // 3. Validate CSV data
+  const insertShipsSchema = createInsertSchema(ships)
+  const validatedData: Array<z.TypeOf<typeof insertShipsSchema>> = []
+
+  for (const row of parsedCsv.data) {
+    const validatedRow = insertShipsSchema.parse(row)
+
+    validatedData.push(validatedRow)
+  }
+
+  // 4. Insert validated data into database
+  await db.insert(ships).values(validatedData)
+}
+
+async function seedShipClasses(db: PlanetScaleDatabase<Record<string, never>>) {
+  console.log('Seeding shipClasses table...')
+
+  // 1. Read CSV file
+  const shipClassesFile = Bun.file('src/data/shipClasses.csv')
+  const csvString = await shipClassesFile.text()
+
+  // 2. Parse CSV file
+  const parsedCsv = Papa.parse(csvString, { header: true, dynamicTyping: true })
+
+  // 3. Validate CSV data
+  const insertShipClassesSchema = createInsertSchema(shipClasses)
+  const validatedData: Array<z.TypeOf<typeof insertShipClassesSchema>> = []
+
+  for (const row of parsedCsv.data) {
+    const validatedRow = insertShipClassesSchema.parse(row)
+
+    validatedData.push(validatedRow)
+  }
+
+  // 4. Insert validated data into database
+  await db.insert(shipClasses).values(validatedData)
+}
+
+async function seedAffiliations(db: PlanetScaleDatabase<Record<string, never>>) {
+  console.log('Seeding affiliations table...')
+
+  // 1. Read CSV file
+  const affiliationsFile = Bun.file('src/data/affiliations.csv')
+  const csvString = await affiliationsFile.text()
+
+  // 2. Parse CSV file
+  const parsedCsv = Papa.parse(csvString, { header: true, dynamicTyping: true })
+
+  // 3. Validate CSV data
+  const insertAffiliationsSchema = createInsertSchema(affiliations)
+  const validatedData: Array<z.TypeOf<typeof insertAffiliationsSchema>> = []
+
+  for (const row of parsedCsv.data) {
+    const validatedRow = insertAffiliationsSchema.parse(row)
+
+    validatedData.push(validatedRow)
+  }
+
+  // 4. Insert validated data into database
+  await db.insert(affiliations).values(validatedData)
+}
+
 async function main() {
   console.log('--- db-seed starting ---')
 
@@ -91,6 +163,9 @@ async function main() {
   await seedGenders(db)
   await seedSpecies(db)
   await seedCharacters(db)
+  await seedShipClasses(db)
+  await seedAffiliations(db)
+  await seedShips(db)
 
   console.log('--- db-seed completed ---\n')
 }

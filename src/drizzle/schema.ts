@@ -46,3 +46,30 @@ export const shipClasses = mysqlTable("ship_classes", {
 		shipClassesId: primaryKey(table.id),
 	}
 });
+
+export const affiliations = mysqlTable("affiliations", {
+	id: int("id").autoincrement().notNull(),
+	name: varchar("name", { length: 255 }).notNull(),
+  primarySpecies: int("primary_species"),
+},
+(table) => {
+	return {
+    idxSpecies: index("idx_species").on(table.primarySpecies),
+		affiliationsId: primaryKey(table.id),
+	}
+});
+
+export const ships = mysqlTable("ships", {
+	id: int("id").autoincrement().notNull(),
+	name: varchar("name", { length: 255 }).notNull(),
+  class: int("class").notNull(),
+  affiliation: int("affiliation").notNull(),
+  description: varchar("description", { length: 255 }).notNull(),
+},
+(table) => {
+	return {
+    idxClass: index("idx_class").on(table.class),
+    idxAffiliation: index("idx_affiliation").on(table.affiliation),
+		shipsId: primaryKey(table.id),
+	}
+});

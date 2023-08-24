@@ -3,7 +3,8 @@
     "pull-schema": "drizzle-kit introspect:mysql",
     "push-schema": "drizzle-kit push:mysql",
     "db-reset": "bun src/scripts/db-reset.ts",
-    "db-seed": "bun src/scripts/db-seed.ts"
+    "db-seed": "bun src/scripts/db-seed.ts",
+    "db-setup": "bun db-reset && bun db-seed"
   },
   "dependencies": {
     "@planetscale/database": "^1.11.0",
